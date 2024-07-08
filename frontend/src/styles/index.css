@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .shadow-right {
+    box-shadow: 6px 0px 6px 0px rgba(0, 0, 0, 0.1);
+  }
+  .shadow-bottom {
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
+  }
+  .shadow-full {
+    box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.1);
+  }
+}
