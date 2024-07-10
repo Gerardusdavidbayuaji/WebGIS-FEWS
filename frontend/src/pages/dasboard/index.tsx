@@ -2,7 +2,29 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/input";
 
+import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+import { useEffect, useRef } from "react";
+
 const Dashboard = () => {
+  const mapref = useRef<L.Map | null>(null);
+
+  useEffect(() => {
+    if (!mapref.current) {
+      mapref.current = L.map("map", { zoomControl: false }).setView(
+        [-2.18, 115.795],
+        5
+      );
+      const basemap = L.tileLayer(
+        "https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}@2x.png?key=AW8IuG306IIk8kNdxEw6",
+        {
+          attribution:
+            '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+        }
+      );
+      basemap.addTo(mapref.current);
+    }
+  }, []);
   return (
     <div className="bg-white text-lg font-bold h-screen w-full flex flex-col">
       {/* start navbar */}
@@ -349,7 +371,9 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-slate-300 rounded-md w-full flex-1"></div>
+              <div className="bg-slate-300 rounded-md w-full flex-1">
+                <div id="map" />
+              </div>
             </div>
             {/* end main dashboard */}
           </div>
