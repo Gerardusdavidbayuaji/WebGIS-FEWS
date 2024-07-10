@@ -1,10 +1,53 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/input";
 
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useEffect, useRef } from "react";
+
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
+import { LogOut, User } from "lucide-react";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/input";
+import { Label } from "@/components/ui/label";
 
 const Dashboard = () => {
   const mapref = useRef<L.Map | null>(null);
@@ -38,10 +81,67 @@ const Dashboard = () => {
               src="/assets/pupr-icon.jpg"
               className="w-6 h-auto ml-2 rounded-full"
             />
-            <p className="text-white text-base font-normal">Admin PUPR</p>
-            <button className="ml-3 mr-4">
-              <img src="/assets/drop-down-icon.png" />
-            </button>
+            <p className="text-white text-base font-normal">admin_pupr</p>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="ml-3 mr-4">
+                  <img src="/assets/drop-down-icon.png" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56 mr-4 mt-6">
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem className="cursor-pointer">
+                    <User className="mr-2 h-4 w-4" />
+                    <span>Edit Profile</span>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button variant="outline">Edit Profile</Button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>Edit profile</DialogTitle>
+                          <DialogDescription>
+                            Make changes to your profile here. Click save when
+                            you're done.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="grid gap-4 py-4">
+                          <div className="grid grid-cols-4 items-center gap-4">
+                            <Label htmlFor="name" className="text-right">
+                              Name
+                            </Label>
+                            <Input
+                              id="name"
+                              defaultValue="Pedro Duarte"
+                              className="col-span-3"
+                            />
+                          </div>
+                          <div className="grid grid-cols-4 items-center gap-4">
+                            <Label htmlFor="username" className="text-right">
+                              Username
+                            </Label>
+                            <Input
+                              id="username"
+                              defaultValue="@peduarte"
+                              className="col-span-3"
+                            />
+                          </div>
+                        </div>
+                        <DialogFooter>
+                          <Button type="submit">Save changes</Button>
+                        </DialogFooter>
+                      </DialogContent>
+                    </Dialog>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer">
+                    <LogOut className="mr-2 h-4 w-4" />
+                    <span>Log out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </div>
@@ -74,28 +174,66 @@ const Dashboard = () => {
                 Data GIS
               </h3>
               <div className="grid grid-cols-2 gap-2">
-                <Input
-                  type="text"
-                  placeholder="Januari"
-                  className="h-7 rounded-md font-normal text-xs text-black"
-                />
-                <Input
-                  type="text"
-                  placeholder="2024"
-                  className="h-7 rounded-md font-normal text-xs text-black"
-                />
+                <Select>
+                  <SelectTrigger className="w-full h-7">
+                    <SelectValue placeholder="Januari" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="bulan_2">Februari</SelectItem>
+                    <SelectItem value="bulan_3">Maret</SelectItem>
+                    <SelectItem value="bulan_4">April</SelectItem>
+                    <SelectItem value="bulan_5">Mei</SelectItem>
+                    <SelectItem value="bulan_6">Juni</SelectItem>
+                    <SelectItem value="bulan_7">Juli</SelectItem>
+                    <SelectItem value="bulan_8">Agustus</SelectItem>
+                    <SelectItem value="bulan_9">September</SelectItem>
+                    <SelectItem value="bulan_10">Oktober</SelectItem>
+                    <SelectItem value="bulan_11">November</SelectItem>
+                    <SelectItem value="bulan_12">Desember</SelectItem>
+                  </SelectContent>
+                </Select>
+
+                <Select>
+                  <SelectTrigger className="w-full h-7">
+                    <SelectValue placeholder="2024" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="tahun_2">2023</SelectItem>
+                    <SelectItem value="tahun_3">2022</SelectItem>
+                    <SelectItem value="tahun_4">2021</SelectItem>
+                    <SelectItem value="tahun_5">2020</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div className="my-2 space-y-2">
-                <Input
-                  type="text"
-                  placeholder="BBWS Pompengan Janeberang"
-                  className="h-8 rounded-md font-normal text-xs text-black"
-                />
-                <Input
-                  type="text"
-                  placeholder="WS Janeberang"
-                  className="h-8 rounded-md font-normal text-xs text-black"
-                />
+                <Select>
+                  <SelectTrigger className="w-full h-7">
+                    <SelectValue placeholder="BBWS Pemali Juana" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="bbws_2">
+                      BBWS Mesuji Sekampung
+                    </SelectItem>
+                    <SelectItem value="bbws_3">
+                      BBWS Mesuji Ciliwung Cisadane
+                    </SelectItem>
+                    <SelectItem value="bbws_4">BBWS Mesuji Citanduy</SelectItem>
+                    <SelectItem value="bbws_5">
+                      BBWS Mesuji Serayu Opak
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+                <Select>
+                  <SelectTrigger className="w-full h-7">
+                    <SelectValue placeholder="Serayu" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="sungai_2">Bogowonto</SelectItem>
+                    <SelectItem value="sungai_3">Jratunseluna</SelectItem>
+                    <SelectItem value="sungai_4">Progo</SelectItem>
+                    <SelectItem value="sungai_5">Opak</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
 
               <div className="mb-2 space-y-2 flex-grow">
@@ -130,12 +268,43 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <Button className="bg-[#7d7d7d]  hover:bg-[#2373eb] w-full rounded-md">
-                <div className="flex gap-2 items-center justify-center">
-                  <img src="/assets/download-icon.png" className="w-6 h-auto" />
-                  <p className="font-normal text-sm text-white">Download</p>
-                </div>
-              </Button>
+              <AlertDialog>
+                <AlertDialogTrigger>
+                  <Button className="bg-[#7d7d7d] hover:bg-[#5ec95d] w-full rounded-md">
+                    <div className="flex gap-2 items-center justify-center">
+                      <img
+                        src="/assets/download-icon.png"
+                        className="w-6 h-auto"
+                      />
+                      <p className="font-normal text-sm text-white">Download</p>
+                    </div>
+                  </Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Apakah Anda yakin?</AlertDialogTitle>
+                    <div>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox id="terms2" disabled />
+                        <label
+                          htmlFor="terms2"
+                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                        >
+                          Bendungan.zip
+                        </label>
+                      </div>
+                    </div>
+                    <AlertDialogDescription>
+                      Ini akan mengunduh data dan menyimpan salinannya di
+                      perangkat Anda.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Batal</AlertDialogCancel>
+                    <AlertDialogAction>Download</AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
             </div>
             {/* end sidebar 2 */}
 
@@ -371,7 +540,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-slate-300 rounded-md w-full flex-1">
+              <div className="bg-slate-300 rounded-md w-full flex-1 z-0">
                 <div id="map" />
               </div>
             </div>
