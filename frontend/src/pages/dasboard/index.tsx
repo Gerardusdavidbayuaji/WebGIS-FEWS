@@ -1,3 +1,4 @@
+import { useToast } from "@/components/ui/use-toast";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 
@@ -31,7 +32,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -51,6 +51,7 @@ import { Label } from "@/components/ui/label";
 
 const Dashboard = () => {
   const mapref = useRef<L.Map | null>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     if (!mapref.current) {
@@ -89,56 +90,66 @@ const Dashboard = () => {
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 mr-4 mt-6">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuLabel>Akun admin_pupr</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuGroup>
-                  <DropdownMenuItem className="cursor-pointer">
-                    <User className="mr-2 h-4 w-4" />
-                    <span>Edit Profile</span>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button variant="outline">Edit Profile</Button>
-                      </DialogTrigger>
-                      <DialogContent className="sm:max-w-[425px]">
-                        <DialogHeader>
-                          <DialogTitle>Edit profile</DialogTitle>
-                          <DialogDescription>
-                            Make changes to your profile here. Click save when
-                            you're done.
-                          </DialogDescription>
-                        </DialogHeader>
-                        <div className="grid gap-4 py-4">
-                          <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="name" className="text-right">
-                              Name
-                            </Label>
-                            <Input
-                              id="name"
-                              defaultValue="Pedro Duarte"
-                              className="col-span-3"
-                            />
-                          </div>
-                          <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="username" className="text-right">
-                              Username
-                            </Label>
-                            <Input
-                              id="username"
-                              defaultValue="@peduarte"
-                              className="col-span-3"
-                            />
-                          </div>
+                <DropdownMenuGroup className="space-y-1">
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <div className="flex gap-1 p-2 items-center justify-start text-xs cursor-pointer rounded-md hover:bg-[#bad7e8]">
+                        <User className="mr-2 h-4 w-4" />
+                        <span>Ganti Password</span>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[425px]">
+                      <DialogHeader>
+                        <DialogTitle>Ganti Password</DialogTitle>
+                        <DialogDescription>
+                          Buat perubahan pada password Anda di sini.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="grid gap-4 py-4">
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="username" className="text-right">
+                            Username
+                          </Label>
+                          <Input
+                            id="username"
+                            defaultValue="admin_pupr"
+                            className="col-span-3"
+                          />
                         </div>
-                        <DialogFooter>
-                          <Button type="submit">Save changes</Button>
-                        </DialogFooter>
-                      </DialogContent>
-                    </Dialog>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer">
+                        <div className="grid grid-cols-4 items-center gap-4">
+                          <Label htmlFor="password" className="text-right">
+                            Password
+                          </Label>
+                          <Input
+                            type="password"
+                            id="password"
+                            defaultValue="pupr12345"
+                            className="col-span-3"
+                          />
+                        </div>
+                      </div>
+                      <DialogFooter>
+                        <Button
+                          className="bg-[#5ec95d] hover:bg-[#48c23d] text-white hover:text-white"
+                          type="submit"
+                          variant="outline"
+                          onClick={() => {
+                            toast({
+                              description: "Berhasil mengubah password",
+                            });
+                          }}
+                        >
+                          Simpan
+                        </Button>
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
+                  <div className="flex gap-1 p-2 items-center justify-start text-xs cursor-pointer rounded-md hover:bg-[#bad7e8]">
                     <LogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
-                  </DropdownMenuItem>
+                    <span>Keluar</span>
+                  </div>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
