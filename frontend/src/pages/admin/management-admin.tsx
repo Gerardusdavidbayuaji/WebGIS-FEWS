@@ -55,103 +55,103 @@ import {
 
 const geodatabases = [
   {
-    file_name: "TitikKoordinatAWLRJeneberang.zip",
-    data: "TitikKoordinatAWLRJeneberang",
+    file_name: "Irigasi.zip",
+    data: "Irigasi",
     bbws: "BBWS Pamali Juana",
-    ws: "ws pamali comal",
-    source: "balai",
+    ws: "Jratunseluna",
+    source: "Balai",
     tanggal: "20/1/2024",
-    size: "200mb",
-    status_qc: "update",
-    hasil_qc: "berhasil",
+    size: "200 mb",
+    status_qc: "Diterima",
+    hasil_qc: "Update",
   },
   {
     file_name: "TitikBanjir.zip",
-    data: "TitikBanjir",
+    data: "Titik Banjir",
     bbws: "BBWS Pamali Juana",
-    ws: "ws pamali comal",
-    source: "balai",
+    ws: "Jratunseluna",
+    source: "Balai",
     tanggal: "20/1/2024",
-    size: "200mb",
-    status_qc: "update",
-    hasil_qc: "berhasil",
+    size: "200 mb",
+    status_qc: "Diterima",
+    hasil_qc: "Update",
   },
   {
     file_name: "GenanganBanjir.zip",
-    data: "GenanganBanjir",
+    data: "Genangan Banjir",
     bbws: "BBWS Pamali Juana",
-    ws: "ws pamali comal",
-    source: "balai",
+    ws: "Jratunseluna",
+    source: "Balai",
     tanggal: "20/1/2024",
-    size: "200mb",
-    status_qc: "update",
-    hasil_qc: "berhasil",
+    size: "200 mb",
+    status_qc: "Diterima",
+    hasil_qc: "Update",
   },
   {
     file_name: "Sungai.zip",
     data: "Sungai",
     bbws: "BBWS Pamali Juana",
-    ws: "ws pamali comal",
-    source: "balai",
+    ws: "Jratunseluna",
+    source: "Balai",
     tanggal: "20/1/2024",
-    size: "200mb",
-    status_qc: "update",
-    hasil_qc: "berhasil",
+    size: "200 mb",
+    status_qc: "Diterima",
+    hasil_qc: "Update",
   },
   {
     file_name: "BatasDesa.zip",
-    data: "BatasDesa",
+    data: "Batas Desa",
     bbws: "BBWS Pamali Juana",
-    ws: "ws pamali comal",
-    source: "balai",
+    ws: "Jratunseluna",
+    source: "Balai",
     tanggal: "20/1/2024",
-    size: "200mb",
-    status_qc: "update",
-    hasil_qc: "berhasil",
+    size: "200 mb",
+    status_qc: "Diterima",
+    hasil_qc: "Update",
   },
   {
-    file_name: "TitikBendungan.zip",
-    data: "TitikBendungan",
+    file_name: "TitikEmbung.zip",
+    data: "Titik Embung",
     bbws: "BBWS Pamali Juana",
-    ws: "ws pamali comal",
-    source: "balai",
+    ws: "Jratunseluna",
+    source: "Balai",
     tanggal: "20/1/2024",
-    size: "200mb",
-    status_qc: "update",
-    hasil_qc: "berhasil",
+    size: "200 mb",
+    status_qc: "Diterima",
+    hasil_qc: "Update",
   },
   {
     file_name: "BatasKabupaten.zip",
-    data: "BatasKabupaten",
+    data: "Batas Kabupaten",
     bbws: "BBWS Pamali Juana",
-    ws: "ws pamali comal",
-    source: "balai",
+    ws: "Jratunseluna",
+    source: "Balai",
     tanggal: "20/1/2024",
-    size: "200mb",
-    status_qc: "update",
-    hasil_qc: "berhasil",
+    size: "200 mb",
+    status_qc: "Diterima",
+    hasil_qc: "Update",
   },
   {
     file_name: "TutupanLahan.tif",
-    data: "TutupanLahan",
+    data: "Tutupan Lahan",
     bbws: "BBWS Pamali Juana",
-    ws: "ws pamali comal",
-    source: "balai",
+    ws: "Jratunseluna",
+    source: "Balai",
     tanggal: "20/1/2024",
-    size: "200mb",
-    status_qc: "update",
-    hasil_qc: "berhasil",
+    size: "200 mb",
+    status_qc: "Diterima",
+    hasil_qc: "Update",
   },
   {
     file_name: "CurahHujan.tif",
-    data: "CurahHujan",
+    data: "Curah Hujan",
     bbws: "BBWS Pamali Juana",
-    ws: "ws pamali comal",
-    source: "balai",
+    ws: "Jratunseluna",
+    source: "Balai",
     tanggal: "20/1/2024",
-    size: "200mb",
-    status_qc: "update",
-    hasil_qc: "berhasil",
+    size: "200 mb",
+    status_qc: "Diterima",
+    hasil_qc: "Update",
   },
 ];
 
@@ -160,86 +160,88 @@ const ManagementAdmin = () => {
     <div className="bg-white text-lg font-bold h-screen w-full flex flex-col">
       {/* start navbar */}
       <div className="bg-[#1c60c7] w-full p-2 shadow-bottom">
-        <div className="flex gap-3 justify-end">
-          <div className="outline-[#4D93FD] outline-2 flex items-center justify-center w-8 h-8 m-2 rounded-full outline cursor-pointer">
-            <img src="/assets/notif-icon.png" className="flex w-4 h-auto" />
-          </div>
-          <div className="bg-[#4D93FD] rounded-full flex items-center justify-center gap-2">
-            <img
-              src="/assets/pupr-icon.jpg"
-              className="w-6 h-auto ml-2 rounded-full"
-            />
-            <p className="text-white text-base font-normal">admin_pupr</p>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="ml-3 mr-4">
-                  <img src="/assets/drop-down-icon.png" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 mr-4 mt-6">
-                <DropdownMenuLabel>Akun admin_pupr</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuGroup className="space-y-1">
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <div className="flex gap-1 p-2 items-center justify-start text-xs cursor-pointer rounded-md hover:bg-[#bad7e8]">
-                        <User className="mr-2 h-4 w-4" />
-                        <span>Ganti Password</span>
-                      </div>
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[425px]">
-                      <DialogHeader>
-                        <DialogTitle>Ganti Password</DialogTitle>
-                        <DialogDescription>
-                          Buat perubahan pada password Anda di sini.
-                        </DialogDescription>
-                      </DialogHeader>
-                      <div className="grid gap-4 py-4">
-                        <div className="grid grid-cols-4 items-center gap-4">
-                          <Label htmlFor="username" className="text-right">
-                            Username
-                          </Label>
-                          <Input
-                            id="username"
-                            defaultValue="admin_pupr"
-                            className="col-span-3"
-                          />
+        <div className="flex items-center justify-end">
+          <div className="flex gap-3">
+            <div className="outline-[#4D93FD] outline-2 flex items-center justify-center w-8 h-8 m-2 rounded-full outline cursor-pointer">
+              <img src="/assets/notif-icon.png" className="flex w-4 h-auto" />
+            </div>
+            <div className="bg-[#4D93FD] rounded-full flex items-center justify-center gap-2">
+              <img
+                src="/assets/pupr-icon.jpg"
+                className="w-6 h-auto ml-2 rounded-full"
+              />
+              <p className="text-white text-base font-normal">admin_pupr</p>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="ml-3 mr-4">
+                    <img src="/assets/drop-down-icon.png" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56 mr-4 mt-6">
+                  <DropdownMenuLabel>Akun admin_pupr</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuGroup className="space-y-1">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="flex gap-1 p-2 items-center justify-start text-xs cursor-pointer rounded-md hover:bg-[#bad7e8]">
+                          <User className="mr-2 h-4 w-4" />
+                          <span>Ganti Password</span>
                         </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                          <Label htmlFor="password" className="text-right">
-                            Password
-                          </Label>
-                          <Input
-                            type="password"
-                            id="password"
-                            defaultValue="pupr12345"
-                            className="col-span-3"
-                          />
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-[425px]">
+                        <DialogHeader>
+                          <DialogTitle>Ganti Password</DialogTitle>
+                          <DialogDescription>
+                            Buat perubahan pada password Anda di sini.
+                          </DialogDescription>
+                        </DialogHeader>
+                        <div className="grid gap-4 py-4">
+                          <div className="grid grid-cols-4 items-center gap-4">
+                            <Label htmlFor="username" className="text-right">
+                              Username
+                            </Label>
+                            <Input
+                              id="username"
+                              defaultValue="admin_pupr"
+                              className="col-span-3"
+                            />
+                          </div>
+                          <div className="grid grid-cols-4 items-center gap-4">
+                            <Label htmlFor="password" className="text-right">
+                              Password
+                            </Label>
+                            <Input
+                              type="password"
+                              id="password"
+                              defaultValue="pupr12345"
+                              className="col-span-3"
+                            />
+                          </div>
                         </div>
-                      </div>
-                      <DialogFooter>
-                        <Button
-                          className="bg-[#5ec95d] hover:bg-[#48c23d] text-white hover:text-white"
-                          type="submit"
-                          variant="outline"
-                          onClick={() => {
-                            toast({
-                              description: "Berhasil mengubah password",
-                            });
-                          }}
-                        >
-                          Simpan
-                        </Button>
-                      </DialogFooter>
-                    </DialogContent>
-                  </Dialog>
-                  <div className="flex gap-1 p-2 items-center justify-start text-xs cursor-pointer rounded-md hover:bg-[#bad7e8]">
-                    <LogOut className="mr-2 h-4 w-4" />
-                    <span>Keluar</span>
-                  </div>
-                </DropdownMenuGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                        <DialogFooter>
+                          <Button
+                            className="bg-[#5ec95d] hover:bg-[#48c23d] text-white hover:text-white"
+                            type="submit"
+                            variant="outline"
+                            onClick={() => {
+                              toast({
+                                description: "Berhasil mengubah password",
+                              });
+                            }}
+                          >
+                            Simpan
+                          </Button>
+                        </DialogFooter>
+                      </DialogContent>
+                    </Dialog>
+                    <div className="flex gap-1 p-2 items-center justify-start text-xs cursor-pointer rounded-md hover:bg-[#bad7e8]">
+                      <LogOut className="mr-2 h-4 w-4" />
+                      <span>Keluar</span>
+                    </div>
+                  </DropdownMenuGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
         </div>
       </div>
@@ -424,7 +426,9 @@ const ManagementAdmin = () => {
                     </DialogTrigger>
                     <DialogContent>
                       <DialogHeader>
-                        <DialogTitle>Share Data</DialogTitle>
+                        <DialogTitle className="text-sm font-medium">
+                          Share Data
+                        </DialogTitle>
                         <div className="flex w-full items-center">
                           <Input
                             type="text"
@@ -451,13 +455,25 @@ const ManagementAdmin = () => {
                     </DialogTrigger>
                     <DialogContent>
                       <DialogHeader>
-                        <DialogTitle>Are you absolutely sure?</DialogTitle>
-                        <DialogDescription>
-                          This action cannot be undone. This will permanently
-                          delete your account and remove your data from our
-                          servers.
-                        </DialogDescription>
+                        <DialogTitle className="text-sm font-medium">
+                          Tambah Data
+                        </DialogTitle>
+                        <div className="grid w-full items-center">
+                          <Input
+                            id="picture"
+                            type="file"
+                            className="text-xs font-normal"
+                          />
+                        </div>
                       </DialogHeader>
+                      <DialogFooter>
+                        <Button className="bg-white outline outline-[1px] outline-[#2272EA] text-[#2272EA] hover:bg-white text-sm font-normal">
+                          Batal
+                        </Button>
+                        <Button className="bg-[#2272EA] hover:bg-[#2272EA] text-sm font-normal">
+                          Upload
+                        </Button>
+                      </DialogFooter>
                     </DialogContent>
                   </Dialog>
                 </div>
