@@ -10,7 +10,7 @@ const Layout = (props: Props) => {
   const { children } = props;
 
   return (
-    <div className="bg-white h-screen w-full text-lg font-bold flex flex-col">
+    <div className="bg-white h-screen w-full text-lg font-bold font-roboto flex flex-col">
       <Navbar />
       <div className="flex flex-grow min-h-0">{children}</div>
     </div>

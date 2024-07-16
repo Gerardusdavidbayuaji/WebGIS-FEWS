@@ -29,7 +29,7 @@ import PuprIcon from "/assets/pupr-icon.jpg";
 
 const Navbar = () => {
   return (
-    <header className="bg-[#1c60c7] w-full shadow-bottom p-2">
+    <header className="bg-[#1c60c7] w-full p-2">
       <nav className="flex gap-3 justify-end">
         <div className="flex outline outline-[#4D93FD] outline-2 items-center justify-center w-8 h-8 m-2 rounded-full cursor-pointer">
           <img
