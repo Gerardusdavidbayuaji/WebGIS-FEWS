@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import SelectManageBalai from "./SelectManageBalai";
 import ManageCancel from "./ManageCancel";
 import ManagePublish from "./ManagePublish";
@@ -21,6 +22,8 @@ const ManageBalai = () => {
           onCancelClick={handleCancelBalaiClick}
           onPublishClick={handlePublishBalaiClick}
           activeButton={activeButton}
+          cancelTitle="Ditolak (2)"
+          publishTitle="Publish (13)"
         />
         {activeButton === "reject" ? <ManageCancel /> : <ManagePublish />}
       </div>

@@ -4,10 +4,14 @@ const SelectManageBalai = ({
   onCancelClick,
   onPublishClick,
   activeButton,
+  cancelTitle,
+  publishTitle,
 }: {
   onCancelClick: () => void;
   onPublishClick: () => void;
   activeButton: string;
+  cancelTitle: string;
+  publishTitle: string;
 }) => {
   return (
     <div className="flex items-center justify-between">
@@ -23,7 +27,7 @@ const SelectManageBalai = ({
           }`}
           onClick={onCancelClick}
         >
-          Ditolak (2)
+          {cancelTitle}
         </Button>
         <Button
           className={`flex w-full h-7 text-xs font-normal text-center justify-center ${
@@ -33,7 +37,7 @@ const SelectManageBalai = ({
           }`}
           onClick={onPublishClick}
         >
-          Publish (13)
+          {publishTitle}
         </Button>
       </div>
     </div>

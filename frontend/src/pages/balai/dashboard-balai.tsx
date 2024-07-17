@@ -5,8 +5,6 @@ import DashBalai from "@/components/DashBalai";
 import Sidebar from "@/components/Sidebar";
 import Layout from "@/components/Layout";
 
-import "leaflet/dist/leaflet.css";
-
 const DashboardBalai = () => {
   const [showDashBalai, setShowDashBalai] = useState(true);
 
