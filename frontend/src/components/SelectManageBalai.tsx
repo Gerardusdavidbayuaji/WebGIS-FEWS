@@ -20,7 +20,7 @@ const SelectManageBalai = ({
       </h3>
       <div className="flex rounded-md w-64 border-[1px] border-[#364878] gap-1 p-1">
         <Button
-          className={`flex w-full h-7 text-xs font-normal text-center justify-center ${
+          className={`flex w-full h-7 text-xs font-normal text-center justify-center transition duration-300 ${
             activeButton === "reject"
               ? "bg-[#364878] hover:bg-[#364878] text-white"
               : "text-[#364878] bg-white hover:bg-white"
@@ -30,7 +30,7 @@ const SelectManageBalai = ({
           {cancelTitle}
         </Button>
         <Button
-          className={`flex w-full h-7 text-xs font-normal text-center justify-center ${
+          className={`flex w-full h-7 text-xs font-normal text-center justify-center transition duration-300 ${
             activeButton === "publish"
               ? "bg-[#364878] hover:bg-[#364878] text-white"
               : "text-[#364878] bg-white hover:bg-white"
