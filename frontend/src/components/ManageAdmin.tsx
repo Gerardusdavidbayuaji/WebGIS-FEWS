@@ -1,7 +1,7 @@
 import { useState } from "react";
 
+import ManageInformationData from "./ManageInfomationData";
 import SelectManageBalai from "./SelectManageBalai";
-import ManageCancel from "./ManageCancel";
 import ManagePublish from "./ManagePublish";
 
 const ManageAdmin = () => {
@@ -25,7 +25,11 @@ const ManageAdmin = () => {
           cancelTitle="Dibaru (5)"
           publishTitle="Publish (15)"
         />
-        {activeButton === "reject" ? <ManageCancel /> : <ManagePublish />}
+        {activeButton === "reject" ? (
+          <ManageInformationData />
+        ) : (
+          <ManagePublish />
+        )}
       </div>
     </div>
   );

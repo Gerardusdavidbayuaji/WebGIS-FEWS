@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 import {
   Select,
@@ -17,6 +16,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 
 import {
   Table,
@@ -36,22 +36,12 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog";
+import CustomFormSelect from "./CustomFormSelect";
 
 const geodatabases = [
   {
-    file_name: "GarisPantai.zip",
-    data: "Garis Pantai",
+    file_name: "Irigasi.zip",
+    data: "Irigasi",
     bbws: "BBWS Pamali Juana",
     ws: "Jratunseluna",
     source: "Balai",
@@ -61,8 +51,8 @@ const geodatabases = [
     hasil_qc: "Update",
   },
   {
-    file_name: "TitikGenangan.zip",
-    data: "Titik Genangan",
+    file_name: "TitikBanjir.zip",
+    data: "Titik Banjir",
     bbws: "BBWS Pamali Juana",
     ws: "Jratunseluna",
     source: "Balai",
@@ -72,8 +62,8 @@ const geodatabases = [
     hasil_qc: "Update",
   },
   {
-    file_name: "GenanganRob.zip",
-    data: "Genangan Rob",
+    file_name: "GenanganBanjir.zip",
+    data: "Genangan Banjir",
     bbws: "BBWS Pamali Juana",
     ws: "Jratunseluna",
     source: "Balai",
@@ -83,8 +73,8 @@ const geodatabases = [
     hasil_qc: "Update",
   },
   {
-    file_name: "TitikKebakaran.zip",
-    data: "Titik Kebakaran",
+    file_name: "Sungai.zip",
+    data: "Sungai",
     bbws: "BBWS Pamali Juana",
     ws: "Jratunseluna",
     source: "Balai",
@@ -94,8 +84,8 @@ const geodatabases = [
     hasil_qc: "Update",
   },
   {
-    file_name: "BatasKecamatan.zip",
-    data: "Batas Kecamatan",
+    file_name: "BatasDesa.zip",
+    data: "Batas Desa",
     bbws: "BBWS Pamali Juana",
     ws: "Jratunseluna",
     source: "Balai",
@@ -127,8 +117,8 @@ const geodatabases = [
     hasil_qc: "Update",
   },
   {
-    file_name: "PenggunaanLahan.tif",
-    data: "Penggunaan Lahan",
+    file_name: "TutupanLahan.tif",
+    data: "Tutupan Lahan",
     bbws: "BBWS Pamali Juana",
     ws: "Jratunseluna",
     source: "Balai",
@@ -150,7 +140,7 @@ const geodatabases = [
   },
 ];
 
-const ManagePublish = () => {
+const ManageInformationData = () => {
   return (
     <div>
       <div className="h-14 flex items-center justify-center">
@@ -276,18 +266,11 @@ const ManagePublish = () => {
             </div>
 
             <div className="flex gap-1">
-              <Select>
-                <SelectTrigger className="w-24 h-7">
-                  <SelectValue placeholder="Tahun" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="tahun_1">2024</SelectItem>
-                  <SelectItem value="tahun_2">2023</SelectItem>
-                  <SelectItem value="tahun_3">2022</SelectItem>
-                  <SelectItem value="tahun_4">2021</SelectItem>
-                  <SelectItem value="tahun_5">2020</SelectItem>
-                </SelectContent>
-              </Select>
+              <CustomFormSelect
+                title="Tahun"
+                value="tahun_1"
+                description="Januari"
+              />
 
               <Select>
                 <SelectTrigger className="w-24 h-7">
@@ -332,38 +315,6 @@ const ManagePublish = () => {
                   <SelectItem value="source_4">Pusat</SelectItem>
                 </SelectContent>
               </Select>
-
-              <AlertDialog>
-                <AlertDialogTrigger>
-                  <Button className="bg-[#1c60c7] hover:bg-[#4D93FD] w-[125px] h-7 rounded-md flex items-center justify-center">
-                    <div className="flex gap-2 items-center justify-center">
-                      <img
-                        src="/assets/publish-icon.png"
-                        className="w-4 h-auto"
-                      />
-                      <p className="font-normal text-xs text-white">Upload</p>
-                    </div>
-                  </Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle className="text-sm font-medium">
-                      Upload Data
-                    </AlertDialogTitle>
-                    <div className="grid w-full items-center">
-                      <Input
-                        id="picture"
-                        type="file"
-                        className="text-xs font-normal"
-                      />
-                    </div>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>Batal</AlertDialogCancel>
-                    <AlertDialogAction>Upload</AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
             </div>
           </div>
         </div>
@@ -372,7 +323,7 @@ const ManagePublish = () => {
         <div className="w-full">
           <div className="flex-grow">
             <Table>
-              <TableHeader className="bg-[#d9d9d9] text-sm font-medium text-[#949494] rounded-md">
+              <TableHeader className="bg-[#d9d9d9] text-sm font-medium text-[#949494]">
                 <TableRow>
                   <TableHead className="text-left">File Name</TableHead>
                   <TableHead className="text-left">Data</TableHead>
@@ -448,4 +399,4 @@ const ManagePublish = () => {
   );
 };
 
-export default ManagePublish;
+export default ManageInformationData;
