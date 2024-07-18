@@ -44,7 +44,7 @@ const Navbar = () => {
             alt="PUPR Icon"
             className="w-6 h-auto ml-2 rounded-full"
           />
-          <p className="text-white text-base font-normal">balai_pupr</p>
+          <p className="text-white text-base font-normal">admin_sda</p>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="ml-3 mr-4">
@@ -52,7 +52,7 @@ const Navbar = () => {
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56 mr-4 mt-6">
-              <DropdownMenuLabel>Akun balai_pupr</DropdownMenuLabel>
+              <DropdownMenuLabel>Akun admin_sda</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup className="space-y-1">
                 <Dialog>

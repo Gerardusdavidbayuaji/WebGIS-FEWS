@@ -22,7 +22,7 @@ const ManageAdmin = () => {
           onCancelClick={handleCancelAdminClick}
           onPublishClick={handlePublishAdminClick}
           activeButton={activeButton}
-          cancelTitle="Dibaru (5)"
+          cancelTitle="Data baru (5)"
           publishTitle="Publish (15)"
         />
         {activeButton === "reject" ? (
