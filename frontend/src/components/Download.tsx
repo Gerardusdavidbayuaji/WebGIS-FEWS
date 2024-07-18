@@ -2,14 +2,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 
 import {
-  SelectContent,
-  SelectTrigger,
-  SelectValue,
-  SelectItem,
-  Select,
-} from "@/components/ui/select";
-
-import {
   AlertDialogDescription,
   AlertDialogTrigger,
   AlertDialogContent,
@@ -20,71 +12,42 @@ import {
   AlertDialogTitle,
   AlertDialog,
 } from "@/components/ui/alert-dialog";
+import CustomFormSelect from "./CustomFormSelect";
 
 const Download = () => {
   return (
     <div className="w-72 h-full flex flex-col rounded-lg shadow-full p-2">
-      <h3 className="text-base font-bold text-black flex text-center justify-center my-2">
+      <h3 className="text-base font-bold text-black flex text-center justify-center my-[3px]">
         Data GIS
       </h3>
       <div className="grid grid-cols-2 gap-2">
-        <Select>
-          <SelectTrigger className="w-full h-7">
-            <SelectValue placeholder="Januari" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="bulan_2">Februari</SelectItem>
-            <SelectItem value="bulan_3">Maret</SelectItem>
-            <SelectItem value="bulan_4">April</SelectItem>
-            <SelectItem value="bulan_5">Mei</SelectItem>
-            <SelectItem value="bulan_6">Juni</SelectItem>
-            <SelectItem value="bulan_7">Juli</SelectItem>
-            <SelectItem value="bulan_8">Agustus</SelectItem>
-            <SelectItem value="bulan_9">September</SelectItem>
-            <SelectItem value="bulan_10">Oktober</SelectItem>
-            <SelectItem value="bulan_11">November</SelectItem>
-            <SelectItem value="bulan_12">Desember</SelectItem>
-          </SelectContent>
-        </Select>
-
-        <Select>
-          <SelectTrigger className="w-full h-7">
-            <SelectValue placeholder="2024" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="tahun_2">2023</SelectItem>
-            <SelectItem value="tahun_3">2022</SelectItem>
-            <SelectItem value="tahun_4">2021</SelectItem>
-            <SelectItem value="tahun_5">2020</SelectItem>
-          </SelectContent>
-        </Select>
+        <CustomFormSelect
+          title="Bulan"
+          value="Bulan_1"
+          description="Januari"
+          triggerClassName="w-full h-7"
+        />
+        <CustomFormSelect
+          title="Tahun"
+          value="Tahun_1"
+          description="2024"
+          triggerClassName="w-full h-7"
+        />
       </div>
 
       <div className="my-2 space-y-2">
-        <Select>
-          <SelectTrigger className="w-full h-7">
-            <SelectValue placeholder="BBWS Pemali Juana" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="bbws_2">BBWS Mesuji Sekampung</SelectItem>
-            <SelectItem value="bbws_3">
-              BBWS Mesuji Ciliwung Cisadane
-            </SelectItem>
-            <SelectItem value="bbws_4">BBWS Mesuji Citanduy</SelectItem>
-            <SelectItem value="bbws_5">BBWS Mesuji Serayu Opak</SelectItem>
-          </SelectContent>
-        </Select>
-        <Select>
-          <SelectTrigger className="w-full h-7">
-            <SelectValue placeholder="Serayu" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="sungai_2">Bogowonto</SelectItem>
-            <SelectItem value="sungai_3">Jratunseluna</SelectItem>
-            <SelectItem value="sungai_4">Progo</SelectItem>
-            <SelectItem value="sungai_5">Opak</SelectItem>
-          </SelectContent>
-        </Select>
+        <CustomFormSelect
+          title="BBWS"
+          value="bbws_1"
+          description="BBWS Mesuji Serayu Opak"
+          triggerClassName="w-full h-7"
+        />
+        <CustomFormSelect
+          title="Sungai"
+          value="sungai_1"
+          description="Serayu"
+          triggerClassName="w-full h-7"
+        />
       </div>
 
       <div className="mb-2 space-y-2 flex-grow">

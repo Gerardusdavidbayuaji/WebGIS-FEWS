@@ -132,15 +132,15 @@ const CardParameter = () => {
         </div>
       </div>
       <div className="grid grid-cols-6 gap-2 rounded-md">
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
-            <h4>Pos Klimatologi</h4>
+            <h4>Curah Hujan</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
               <p className="font-bold text-xs text-black">21</p>
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Situ</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -148,7 +148,7 @@ const CardParameter = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Danau</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -156,7 +156,7 @@ const CardParameter = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Embung</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -164,7 +164,7 @@ const CardParameter = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Bendungan</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -172,7 +172,7 @@ const CardParameter = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Bendung</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -182,7 +182,7 @@ const CardParameter = () => {
         </div>
       </div>
       <div className="grid grid-cols-6 gap-2 rounded-md">
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Tanggul</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -190,7 +190,7 @@ const CardParameter = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Titik Sungai Kritis</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -198,7 +198,7 @@ const CardParameter = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Titik Tanggul Kritis</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -206,7 +206,7 @@ const CardParameter = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Sungai</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -214,7 +214,7 @@ const CardParameter = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Realisasi Tanam</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">
@@ -222,7 +222,7 @@ const CardParameter = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#bad7e8] rounded-md text-xs font-semibold text-black">
+        <div className="bg-[#bad7e8] rounded-md text-xs font-normal text-black">
           <div className="flex items-center justify-between gap-2 m-1">
             <h4>Genangan Banjir</h4>
             <div className="bg-white flex items-center justify-center w-6 h-6 rounded-md">

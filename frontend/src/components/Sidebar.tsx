@@ -1,4 +1,8 @@
+import { useState } from "react";
+
+import DashboardActiveIcon from "/assets/dashboard-active-icon.png";
 import DashboardIcon from "/assets/dashboard-icon.png";
+import ManagedActiveIcon from "/assets/document-active-icon.png";
 import ManageIcon from "/assets/document-icon.png";
 import CloseIcon from "/assets/close-icon.png";
 
@@ -9,24 +13,44 @@ const Sidebar = ({
   onDashboardClick: () => void;
   onManageClick: () => void;
 }) => {
+  const [active, setActive] = useState("dashboard");
+
+  const handleDashboardClick = () => {
+    setActive("dashboard");
+    onDashboardClick();
+  };
+
+  const handleManageClick = () => {
+    setActive("manage");
+    onManageClick();
+  };
+
   return (
     <div className="grid flex-cols-2 w-14 shadow-right">
       <div className="flex flex-col items-center justify-end space-y-2">
         <div
-          className="bg-[#bad7e8] w-9 h-9 rounded-md flex items-center justify-center cursor-pointer"
-          onClick={onDashboardClick}
+          className={`w-9 h-9 rounded-md flex items-center justify-center cursor-pointer ${
+            active === "dashboard" ? "bg-[#bad7e8]" : "bg-white"
+          }`}
+          onClick={handleDashboardClick}
         >
           <img
-            src={DashboardIcon}
+            src={active === "dashboard" ? DashboardActiveIcon : DashboardIcon}
             alt="Dashboard Icon"
             className="w-5 h-auto"
           />
         </div>
         <div
-          className="bg-[#bad7e8] w-9 h-9 rounded-md flex items-center justify-center cursor-pointer"
-          onClick={onManageClick}
+          className={`w-9 h-9 rounded-md flex items-center justify-center cursor-pointer ${
+            active === "manage" ? "bg-[#bad7e8]" : "bg-white"
+          }`}
+          onClick={handleManageClick}
         >
-          <img src={ManageIcon} alt="Document Icon" className="w-4 h-5" />
+          <img
+            src={active === "manage" ? ManagedActiveIcon : ManageIcon}
+            alt="Document Icon"
+            className="w-4 h-5"
+          />
         </div>
       </div>
 
