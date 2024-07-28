@@ -1,23 +1,36 @@
-import CardParameter from "@/components/CardParameter";
-import Download from "@/components/Download";
-import Basemap from "@/components/Basemap";
-import Sidebar from "@/components/Sidebar";
+import React, { useState } from "react";
 
-const DashAdmin = () => {
+interface DropdownMenuProps {
+  title: string;
+  items: string[];
+}
+
+const DropdownMenu: React.FC<DropdownMenuProps> = ({ title, items }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className="flex flex-grow min-h-0">
-      <Sidebar />
-      <div className="w-full min-h-0 flex flex-col">
-        <div className="flex-1 flex m-4 gap-4">
-          <Download />
-          <div className="w-full flex flex-col space-y-2">
-            <CardParameter />
-            <Basemap />
-          </div>
-        </div>
-      </div>
+    <div className="relative">
+      <button
+        onClick={toggleDropdown}
+        className="w-full text-left bg-gray-800 text-white p-2 rounded-md focus:outline-none"
+      >
+        {title}
+      </button>
+      {isOpen && (
+        <ul className="absolute left-0 mt-2 bg-gray-800 text-white w-full rounded-md shadow-lg">
+          {items.map((item, index) => (
+            <li key={index} className="p-2 hover:bg-gray-700 cursor-pointer">
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
 
-export default DashAdmin;
+export default DropdownMenu;
