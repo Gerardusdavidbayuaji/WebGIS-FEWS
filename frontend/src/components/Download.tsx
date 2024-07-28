@@ -23,8 +23,6 @@ const Download = () => {
   const [isExpandedPCH, setIsExpandedPCH] = useState(false);
   const [isExpandedARR, setIsExpandedARR] = useState(true);
   const [isExpandedAWLR, setIsExpandedAWLR] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleTogglePDA = () => {
     setIsExpandedPDA(!isExpandedPDA);
@@ -41,15 +39,6 @@ const Download = () => {
   const handleToggleAWLR = () => {
     setIsExpandedAWLR(!isExpandedAWLR);
   };
-
-  const handleCheckboxChange = (e: any) => setIsChecked(e.target.checked);
-  const handleDownloadClick = () => {
-    if (isChecked) {
-      setIsDialogOpen(true);
-    }
-  };
-
-  const handleDialogClose = () => setIsDialogOpen(false);
 
   return (
     <div className="w-72 h-full flex flex-col rounded-lg shadow-full p-2">
@@ -110,7 +99,7 @@ const Download = () => {
               <ul className="pl-3 ml-2 font-normal text-xs border-l-2 border-[#f2f2f2] space-y-1">
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox id="danau" onChange={handleCheckboxChange} />
+                    <Checkbox id="danau" />
                     <label htmlFor="danau" className="font-normal text-xs">
                       Danau
                     </label>
@@ -118,7 +107,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox id="bendungan" onChange={handleCheckboxChange} />
+                    <Checkbox id="bendungan" />
                     <label htmlFor="bendungan" className="font-normal text-xs">
                       Bendungan
                     </label>
@@ -126,7 +115,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox id="embung" onChange={handleCheckboxChange} />
+                    <Checkbox id="embung" />
                     <label htmlFor="embung" className="font-normal text-xs">
                       Embung
                     </label>
@@ -156,10 +145,7 @@ const Download = () => {
               <ul className="pl-3 ml-2 font-normal text-xs border-l-2 border-[#f2f2f2] space-y-1">
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="curah_hujan"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="curah_hujan" />
                     <label
                       htmlFor="curah_hujan"
                       className="font-normal text-xs"
@@ -170,7 +156,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox id="fase_tanam" onChange={handleCheckboxChange} />
+                    <Checkbox id="fase_tanam" />
                     <label htmlFor="fase_tanam" className="font-normal text-xs">
                       Fase Tanam
                     </label>
@@ -178,10 +164,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="genangan_banjir"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="genangan_banjir" />
                     <label
                       htmlFor="genangan_banjir"
                       className="font-normal text-xs"
@@ -214,10 +197,7 @@ const Download = () => {
               <ul className="pl-3 ml-2 font-normal text-xs border-l-2 border-[#f2f2f2] space-y-1">
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="curah_hujan"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="curah_hujan" />
                     <label
                       htmlFor="curah_hujan"
                       className="font-normal text-xs"
@@ -228,7 +208,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox id="fase_tanam" onChange={handleCheckboxChange} />
+                    <Checkbox id="fase_tanam" />
                     <label htmlFor="fase_tanam" className="font-normal text-xs">
                       Fase Tanam
                     </label>
@@ -236,10 +216,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="genangan_banjir"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="genangan_banjir" />
                     <label
                       htmlFor="genangan_banjir"
                       className="font-normal text-xs"
@@ -250,10 +227,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="genangan_rob"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="genangan_rob" />
                     <label
                       htmlFor="genangan_rob"
                       className="font-normal text-xs"
@@ -264,10 +238,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="history_banjir"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="history_banjir" />
                     <label
                       htmlFor="history_banjir"
                       className="font-normal text-xs"
@@ -278,10 +249,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="penggunaan_lahan"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="penggunaan_lahan" />
                     <label
                       htmlFor="penggunaan_lahan"
                       className="font-normal text-xs"
@@ -292,10 +260,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="tutupan_lahan"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="tutupan_lahan" />
                     <label
                       htmlFor="tutupan_lahan"
                       className="font-normal text-xs"
@@ -306,10 +271,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="sempadan_pantai"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="sempadan_pantai" />
                     <label
                       htmlFor="sempadan_pantai"
                       className="font-normal text-xs"
@@ -320,10 +282,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="sempadan_danau"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="sempadan_danau" />
                     <label
                       htmlFor="sempadan_danau"
                       className="font-normal text-xs"
@@ -356,10 +315,7 @@ const Download = () => {
               <ul className="pl-3 ml-2 font-normal text-xs border-l-2 border-[#f2f2f2] space-y-1">
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="curah_hujan"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="curah_hujan" />
                     <label
                       htmlFor="curah_hujan"
                       className="font-normal text-xs"
@@ -370,7 +326,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox id="fase_tanam" onChange={handleCheckboxChange} />
+                    <Checkbox id="fase_tanam" />
                     <label htmlFor="fase_tanam" className="font-normal text-xs">
                       Fase Tanam
                     </label>
@@ -378,10 +334,7 @@ const Download = () => {
                 </li>
                 <li className="hover:bg-[#f2f2f2] py-1 pl-1 rounded-md transition duration-75 delay-75">
                   <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="genangan_banjir"
-                      onChange={handleCheckboxChange}
-                    />
+                    <Checkbox id="genangan_banjir" />
                     <label
                       htmlFor="genangan_banjir"
                       className="font-normal text-xs"

@@ -31,13 +31,44 @@ const Navbar = () => {
   return (
     <header className="bg-[#1c60c7] w-full p-2">
       <nav className="flex gap-3 justify-end">
-        <div className="flex outline outline-[#4D93FD] outline-2 items-center justify-center w-8 h-8 m-2 rounded-full cursor-pointer">
-          <img
-            src={NotifIcon}
-            alt="Notification Icon"
-            className="flex w-4 h-auto"
-          />
-        </div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <div className="flex outline outline-[#4D93FD] outline-2 items-center justify-center w-8 h-8 m-2 rounded-full cursor-pointer">
+              <img
+                src={NotifIcon}
+                alt="Notification Icon"
+                className="flex w-4 h-auto"
+              />
+            </div>
+          </DialogTrigger>
+          <DialogContent className="h-56">
+            <DialogHeader>
+              <DialogTitle>Notifikasi (5)</DialogTitle>
+            </DialogHeader>
+            <div className="overflow-y-scroll py-2 pr-2">
+              <div className="text-sm font-normal">
+                <div className="bg-[#C2D9FA] rounded-md p-2">
+                  <h1 className="text-[#2272EA] font-medium">
+                    BBWS Pamali Juana
+                  </h1>
+                </div>
+                <div className="p-2">
+                  <p>
+                    Telah menggunggah Data{" "}
+                    <span className="font-medium">Daerah Irigasi</span> pada
+                    <span className="font-medium"> WS Jeneberang</span>, segera
+                    proses data.
+                  </p>
+                </div>
+                <div className="flex items-center justify-end text-xs py-1 px-2 ">
+                  7/20/2024
+                </div>
+                <hr className="border-1 border-[#767676] mb-2" />
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+
         <div className="flex bg-[#4D93FD] rounded-full items-center justify-center gap-2">
           <img
             src={PuprIcon}
